@@ -124,6 +124,16 @@
   }
 }
 
+/* Usabilidad: desplazamiento suave y compensación por navbar fija */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Asegura que al navegar por ancla, la sección no quede tapada por la navbar */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
 @keyframes float {
   0%,
   100% {

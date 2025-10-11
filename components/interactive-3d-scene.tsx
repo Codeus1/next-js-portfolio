@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber"
 import { OrbitControls, Float, MeshDistortMaterial, Sphere, Box, Torus } from "@react-three/drei"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
 import { Card } from "@/components/ui/card"
@@ -46,6 +46,17 @@ export function Interactive3DScene() {
   const [color, setColor] = useState("#6366f1")
   const [distort, setDistort] = useState(0.6)
   const [showControls, setShowControls] = useState(true)
+  const [reduceMotion, setReduceMotion] = useState(false)
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && "matchMedia" in window) {
+      const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+      setReduceMotion(mq.matches)
+      const handler = (e: MediaQueryListEvent) => setReduceMotion(e.matches)
+      mq.addEventListener?.("change", handler)
+      return () => mq.removeEventListener?.("change", handler)
+    }
+  }, [])
 
   const shapes = ["sphere", "box", "torus"]
   const colors = ["#6366f1", "#ec4899", "#8b5cf6", "#06b6d4", "#10b981"]
@@ -68,8 +79,17 @@ export function Interactive3DScene() {
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
         <directionalLight position={[-10, -10, -5]} intensity={0.5} />
-        <AnimatedShape shape={shape} color={color} distort={distort} />
-        <OrbitControls enableZoom={false} enablePan={false} />
+        {reduceMotion ? (
+          // Render estático cuando reduce motion está activado
+          <group>
+            <AnimatedShape shape={shape} color={color} distort={0} />
+          </group>
+        ) : (
+          <>
+            <AnimatedShape shape={shape} color={color} distort={distort} />
+            <OrbitControls enableZoom={false} enablePan={false} />
+          </>
+        )}
       </Canvas>
 
       {/* Interactive Controls */}
@@ -104,8 +124,9 @@ export function Interactive3DScene() {
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs text-muted-foreground">Distorsión: {distort.toFixed(2)}</label>
+              <label id="distorsion-label" className="text-xs text-muted-foreground">Distorsión: {distort.toFixed(2)}</label>
               <Slider
+                aria-labelledby="distorsion-label"
                 value={[distort]}
                 onValueChange={(value) => setDistort(value[0])}
                 min={0}

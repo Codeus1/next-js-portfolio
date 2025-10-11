@@ -58,19 +58,34 @@ export function Hero() {
           </div>
 
           <div className="flex items-center justify-center gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-            <Button variant="ghost" size="icon" asChild>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                <Github className="w-5 h-5 text-background" />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-primary bg-background/70 backdrop-blur-sm border border-border/40 rounded-full transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              asChild
+            >
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Abrir GitHub en nueva ventana">
+                <Github className="w-5 h-5" aria-hidden="true" />
               </a>
             </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="w-5 h-5 text-background" />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-primary bg-background/70 backdrop-blur-sm border border-border/40 rounded-full transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              asChild
+            >
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn en nueva ventana">
+                <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
             </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <a href="mailto:tu@email.com">
-                <Mail className="w-5 h-5 text-background" />
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-primary bg-background/70 backdrop-blur-sm border border-border/40 rounded-full transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              asChild
+            >
+              <a href="mailto:tu@email.com" aria-label="Enviar correo electrónico">
+                <Mail className="w-5 h-5" aria-hidden="true" />
               </a>
             </Button>
           </div>
@@ -78,8 +93,8 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
-        <ArrowDown className="w-6 h-6 text-muted-foreground" />
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 motion-reduce:sr-only animate-bounce z-10">
+        <ArrowDown className="w-6 h-6 text-muted-foreground" aria-hidden="true" />
       </div>
     </section>
   )

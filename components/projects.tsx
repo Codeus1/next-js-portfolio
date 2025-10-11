@@ -56,7 +56,7 @@ export function Projects() {
                 <div className="relative h-48 overflow-hidden bg-muted">
                   <Image
                     src={project.image || "/placeholder.svg"}
-                    alt={project.title}
+                    alt={`Captura del proyecto ${project.title}`}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />

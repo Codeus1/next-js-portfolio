@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { Menu, X } from "lucide-react"
 
 export function Navigation() {
@@ -63,18 +64,21 @@ export function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm"
+                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors 
+                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm 
+                dark:text-foreground/80 hover:dark:text-foreground"
               >
                 {item.label}
               </a>
             ))}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden rounded-md transition-colors dark:hover:border-accent dark:hover:bg-accent dark:hover:text-accent-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
@@ -87,6 +91,10 @@ export function Navigation() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div id="mobile-menu" className="md:hidden mt-4 pb-4 space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-muted-foreground">Tema</span>
+              <ThemeToggle />
+            </div>
             {navItems.map((item, idx) => (
               <a
                 key={item.href}

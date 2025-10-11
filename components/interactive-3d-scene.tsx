@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
 import { Card } from "@/components/ui/card"
-import { Palette, RotateCw, Shapes } from "lucide-react"
+import { Palette, SlidersHorizontal, Shapes } from "lucide-react"
 
 function AnimatedShape({ shape, color, distort }: { shape: string; color: string; distort: number }) {
   const ShapeComponent = () => {
@@ -93,11 +93,21 @@ export function Interactive3DScene() {
       </Canvas>
 
       {/* Interactive Controls */}
-      <Card className="absolute bottom-8 left-8 p-4 space-y-4 bg-card/80 backdrop-blur-lg border-border/50 hidden md:block rounded-4xl">
+      <Card className="absolute bottom-8 left-8 p-4 space-y-4 bg-card/80 backdrop-blur-lg 
+      border-border/50 hidden md:block rounded-4xl"
+      >
         <div className="flex items-center justify-between">
-          <p className="text-sm font-medium">Controles 3D</p>
-          <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => setShowControls(!showControls)}>
-            <RotateCw className="w-4 h-4" />
+          <p className="text-sm font-medium px-2">Controles 3D</p>
+          <Button
+            className="hover:text-amber-50 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-accent-foreground"
+            variant="ghost"
+            size="icon"
+            onClick={() => setShowControls(!showControls)}
+            aria-pressed={showControls}
+            aria-label={showControls ? "Ocultar controles" : "Mostrar controles"}
+            title={showControls ? "Ocultar controles" : "Mostrar controles"}
+          >
+            <SlidersHorizontal className="w-4 h-4" />
           </Button>
         </div>
 

@@ -35,7 +35,7 @@ export function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-24 md:py-32 bg-muted/30">
+    <section id="projects" className="py-24 md:py-32 bg-muted/30 dark:bg-muted">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">
@@ -72,15 +72,34 @@ export function Projects() {
                     ))}
                   </div>
                   <div className="flex gap-3 pt-2">
-                    <Button variant="outline" size="sm" className="gap-2 flex-1 bg-transparent" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4" />
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="gap-2 flex-1 bg-transparent group transform-gpu transition duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-[#0d1117] hover:bg-[#0d1117] hover:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-black"
+                      asChild
+                    >
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`Abrir código de ${project.title} en GitHub (se abre en nueva pestaña)`} title="Abrir en GitHub">
+                        <Github className="w-4 h-4 transition duration-200 motion-safe:group-hover:-translate-y-0.5" aria-hidden="true" />
                         Código
                       </a>
                     </Button>
-                    <Button size="sm" className="gap-2 flex-1" asChild>
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4" />
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="gap-2 flex-1 bg-transparent group transform-gpu transition duration-200 ease-out 
+                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-accent 
+                      hover:bg-accent hover:text-accent-foreground 
+                      dark:hover:border-accent dark:hover:bg-accent dark:hover:text-accent-foreground"
+                      asChild
+                    >
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Abrir demo de ${project.title} (se abre en nueva pestaña)`}
+                        title="Abrir demo"
+                      >
+                        <ExternalLink className="w-4 h-4 transition duration-200 motion-safe:group-hover:-translate-y-0.5" aria-hidden="true" />
                         Demo
                       </a>
                     </Button>

@@ -31,7 +31,7 @@ export function Experience() {
     },
   ]
   return (
-    <section id="experience" className="py-24 md:py-32">
+    <section id="experience" className="py-24 md:py-32 dark:bg-muted">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-4">
@@ -70,7 +70,7 @@ export function Experience() {
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium"
+                        className="px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium dark:bg-ring/10"
                       >
                         {tech}
                       </span>

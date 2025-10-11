@@ -74,7 +74,7 @@ export function Interactive3DScene() {
 
       {/* Interactive Controls */}
       <Card className="absolute bottom-8 left-8 p-4 space-y-4 bg-card/80 backdrop-blur-lg border-border/50 hidden md:block rounded-4xl">
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center justify-between">
           <p className="text-sm font-medium">Controles 3D</p>
           <Button variant="ghost" size="icon" className="h-6 w-6" onClick={() => setShowControls(!showControls)}>
             <RotateCw className="w-4 h-4" />

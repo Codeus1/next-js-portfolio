@@ -44,7 +44,7 @@ function AnimatedShape({ shape, color, distort }: { shape: string; color: string
 export function Interactive3DScene() {
   const [shape, setShape] = useState("sphere")
   const [color, setColor] = useState("#6366f1")
-  const [distort, setDistort] = useState(0.4)
+  const [distort, setDistort] = useState(0.6)
   const [showControls, setShowControls] = useState(true)
 
   const shapes = ["sphere", "box", "torus"]

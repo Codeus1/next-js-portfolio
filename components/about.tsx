@@ -59,8 +59,8 @@ export function About() {
           <div className="max-w-3xl mx-auto space-y-6 text-center">
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
               Con más de 5 años de experiencia en desarrollo web, me especializo en crear aplicaciones modernas y
-              escalables. Mi enfoque combina las mejores prácticas de ingeniería con un ojo crítico para el diseño,
-              asegurando que cada proyecto no solo funcione perfectamente, sino que también ofrezca una experiencia de
+              escalables. Mi enfoque combina las mejores prácticas de ingeniería con un ojo crítico para el diseño, 
+              lo que asegura que cada proyecto no solo funcione perfectamente, sino que también ofrezca una experiencia de
               usuario memorable.
             </p>
             <div className="flex flex-wrap justify-center gap-3">

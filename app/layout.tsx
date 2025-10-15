@@ -6,9 +6,14 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Antonio Muñoz Portfolio',
+  description: 'Desarrollador Full-Stack | React, Next.js, Node.js | Proyectos Innovadores y Soluciones a Medida',
+  generator: 'Next.js',
+  applicationName: 'Antonio Muñoz Portfolio',
+  referrer: 'origin-when-cross-origin',
+  keywords: ['Antonio Muñoz', 'Desarrollador Full-Stack', 'React', 'Next.js', 'Node.js', 'Portfolio'],
+  authors: [{ name: 'Antonio Muñoz', url: 'https://antonio-munoz-portfolio.vercel.app' }],
+  creator: 'Antonio Muñoz',
 }
 
 export default function RootLayout({

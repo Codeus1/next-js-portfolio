@@ -47,6 +47,9 @@ export const metadata: Metadata = {
     description: 'I build accessible, high-performance interfaces with Next.js for startups and agencies.',
     images: [`${SITE_URL}/og-default.svg`],
   },
+  verification: {
+    google: 'jmPFmozsvJAi_hjpT29gB7RBbnLPzIMTATGGfiaQUV8',
+  },
   robots: {
     index: true,
     follow: true,

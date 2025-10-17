@@ -9,7 +9,12 @@ export function Experience() {
       //todo: poner un date.now() para poner presente o algo asi, "presente" ahi a piñon no me gusta
       period: "2024 - Presente",
       description:
-        "Investigador en técnicas de optimización de renderizado de modelos 3D para web mediante escaneo previo de drones en UCJC - Hovering Solutions.",
+        `Designed and implemented 3D rendering optimization techniques for web applications using drone data, in collaboration 
+        with UCJC - Hovering Solutions.
+        Developed interactive visualization prototypes and participated in the creation of a comprehensive platform using 
+        NestJS and a 3D front-end for managing digital twin projects, including model review, defect control, 
+        annotations, and georeferenced image integration.
+        `,
       technologies: ["React", "Nest.js", "TypeScript", "Tailwind CSS"],
     },
 
@@ -17,16 +22,19 @@ export function Experience() {
       title: "Desarrollador Frontend",
       company: "ALTIA",
       period: "7/2023 - 6/2024",
-      description:
-        "Development of Front-End functionalities with JavaScript frameworks like Vue.js 3 and React 18.\n- Data visualization with JavaScript in structured formats for better and faster understanding by humans, such as data tables.\n- Management of asynchronous requests to data sources.\n- Management and handling of global state in front-end applications.\n- Routing management in web applications.\n- Database communication to optimize application performance.\n- Continuous improvement of user interface and user experience (UI/UX).",
+      description: `Developed new functionalities in enterprise applications using React 18 and Vue 3, 
+        enhancing code scalability.
+        Optimized global state management and routing, reducing asynchronous request errors and accelerating performance.
+        Implemented data visualization components that facilitated the interpretation of key information and collaborated on continuous user interface and experience improvements, which increased internal client satisfaction.`,
       technologies: ["Vue.js", "React", "JavaScript", "TypeScript", "REST APIs"],
     },
     {
+
       title: "QA Engineer",
       company: "THALES",
       period: "6/2022 - 10/2022",
       description:
-        "Contrato de prácticas · Consultas a base de datos para extraer información relevante para la empresa.\nCreación de procedimientos almacenados (PL-SQL).\nTratamiento de datos (organización y visualización) con Excel.\nRevisar funcionamiento de maquinas remotas (AWS).\nDocumentación de actividades relevantes con Confluence - JIRA",
+        "Automated information extraction using SQL queries and stored procedures, reducing data analysis times. Supervised operations on remote machines in AWS, ensuring service continuity. Documented procedures and results in Confluence, improving the traceability of QA processes",
       technologies: ["PL-SQL", "MySQL", "JIRA", "Excel", "AWS"],
     },
   ]

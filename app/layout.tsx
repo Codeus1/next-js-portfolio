@@ -48,7 +48,8 @@ export const metadata: Metadata = {
     images: [`${SITE_URL}/og-default.svg`],
   },
   verification: {
-    google: 'jmPFmozsvJAi_hjpT29gB7RBbnLPzIMTATGGfiaQUV8',
+    
+    google: 'TsVpjtEQWVGyYZFRYTPXF7IeaaBv28OrI5vhBv6logM',
   },
   robots: {
     index: true,

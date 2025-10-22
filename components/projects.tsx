@@ -6,6 +6,15 @@ import Image from "next/image"
 export function Projects() {
   const projects = [
     {
+      title: "YouTube Clone",
+      description:
+        "A YouTube clone with video playback, user authentication, comments, likes and subscriptions.",
+      image: "/studio_new-tube.png",
+      technologies: ["Next.js", "Firebase", "TypeScript", "Sass"],
+      github: "https://github.com/antonioPDI/new-tube",
+      demo: "https://demo.com",
+    },
+    {
       title: "E-Commerce Platform",
       description:
         "Full-featured e-commerce platform with shopping cart, integrated payments and admin panel.",
@@ -23,15 +32,15 @@ export function Projects() {
       github: "https://github.com",
       demo: "https://demo.com",
     },
-    {
-      title: "Social Media App",
-      description:
-        "Social app with real-time feed, messaging system, push notifications and user profiles.",
-      image: "/social-media-app-interface.png",
-      technologies: ["Next.js", "Socket.io", "MongoDB", "AWS"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-    },
+    // {
+    //   title: "Social Media App",
+    //   description:
+    //     "Social app with real-time feed, messaging system, push notifications and user profiles.",
+    //   image: "/social-media-app-interface.png",
+    //   technologies: ["Next.js", "Socket.io", "MongoDB", "AWS"],
+    //   github: "https://github.com",
+    //   demo: "https://demo.com",
+    // },
   ]
 
   return (
@@ -56,8 +65,8 @@ export function Projects() {
               >
                 <div className="relative h-48 overflow-hidden bg-muted">
                   <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={`Captura del proyecto ${project.title}`}
+                    src={project.image || "/studio_new-tube.png"}
+                    alt={`Screenshot of ${project.title}`}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />

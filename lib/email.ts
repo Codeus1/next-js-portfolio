@@ -24,19 +24,19 @@ export async function sendContactEmail(payload: ContactPayload): Promise<{ ok: t
 
   try {
     const resend = new Resend(KEY)
-    const subject = `Nuevo mensaje de contacto: ${payload.name}`
+    const subject = `New contact message: ${payload.name}`
     const html = `
-      <h2>Nuevo mensaje desde el portfolio</h2>
-      <p><strong>Nombre:</strong> ${escapeHtml(payload.name)}</p>
+      <h2>New message from the portfolio</h2>
+      <p><strong>Name:</strong> ${escapeHtml(payload.name)}</p>
       <p><strong>Email:</strong> ${escapeHtml(payload.email)}</p>
-      <p><strong>Mensaje:</strong></p>
+      <p><strong>Message:</strong></p>
       <pre style="white-space:pre-wrap;font-family:ui-monospace,monospace">${escapeHtml(payload.message)}</pre>
     `
     await resend.emails.send({ from: 'Portfolio <noreply@resend.dev>', to: [TO], subject, html })
     return { ok: true }
   } catch (e: any) {
-    console.error('[email] Error enviando correo', e)
-    return { ok: false, error: 'No se pudo enviar el correo' }
+    console.error('[email] Error sending email', e)
+    return { ok: false, error: 'Could not send email' }
   }
 }
 

@@ -11,9 +11,9 @@ import { useEffect, useMemo, useState } from "react"
 import { z } from "zod"
 
 const ContactSchema = z.object({
-  name: z.string().min(2, "El nombre es demasiado corto").max(80, "El nombre es demasiado largo"),
-  email: z.string().email("Email inválido").max(200),
-  message: z.string().min(10, "El mensaje es demasiado corto").max(2000, "El mensaje es demasiado largo"),
+  name: z.string().min(2, "Name is too short").max(80, "Name is too long"),
+  email: z.string().email("Invalid email address").max(200),
+  message: z.string().min(10, "Message is too short").max(2000, "Message is too long"),
   // Anti-spam
   website: z.string().optional(),
   ts: z.number().optional(),
@@ -33,7 +33,7 @@ export function Contact() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
   const [statusMsg, setStatusMsg] = useState<string>("")
 
-  // Sello de tiempo al montar (min dwell time)
+  // Timestamp on mount (min dwell time)
   useEffect(() => {
     setFormData((p) => ({ ...p, ts: Date.now() }))
   }, [])
@@ -69,17 +69,17 @@ export function Contact() {
     setStatus("submitting")
     setStatusMsg("")
 
-    // Honeypot: si está relleno, terminamos en silencio
+    // Honeypot: if filled, finish silently
     if (formData.website && formData.website.trim().length > 0) {
       setStatus("success")
-      setStatusMsg("Mensaje enviado")
+      setStatusMsg("Message sent")
       setFormData({ name: "", email: "", message: "", website: "", ts: Date.now() })
       return
     }
 
     if (!validateAll(formData)) {
       setStatus("error")
-      setStatusMsg("Revisa los campos marcados")
+      setStatusMsg("Please check the highlighted fields")
       return
     }
 
@@ -91,14 +91,14 @@ export function Contact() {
       })
       const json = await res.json().catch(() => ({}))
       if (!res.ok || json?.ok === false) {
-        throw new Error(json?.error || "No se pudo enviar el mensaje")
+        throw new Error(json?.error || "Could not send message")
       }
       setStatus("success")
-      setStatusMsg("¡Gracias! He recibido tu mensaje.")
+      setStatusMsg("Thanks! I received your message.")
       setFormData({ name: "", email: "", message: "", website: "", ts: Date.now() })
     } catch (err: any) {
       setStatus("error")
-      setStatusMsg(err?.message || "Error al enviar el mensaje")
+      setStatusMsg(err?.message || "Error sending message")
     }
   }
 
@@ -108,26 +108,26 @@ export function Contact() {
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-              Hablemos de tu <span className="text-primary">Proyecto</span>
+              Let's talk about your <span className="text-primary">Project</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-              ¿Tienes una idea en mente? Me encantaría escucharla y ayudarte a hacerla realidad
+              Got an idea in mind? I'd love to hear it and help you make it real
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="p-8 space-y-6 bg-card border-border shadow-none">
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold">Información de Contacto</h3>
+                <h3 className="text-2xl font-bold">Contact Information</h3>
                 <p className="text-muted-foreground text-pretty">
-                  Estoy disponible para proyectos freelance, colaboraciones o simplemente para charlar sobre tecnología.
+                  I'm available for freelance projects, collaborations, or just to chat about technology.
                 </p>
               </div>
-              <div className="space-y-4" role="list" aria-label="Información de contacto">
+              <div className="space-y-4" role="list" aria-label="Contact information">
                 <a
                   href="mailto:tonytorres1098@gmail.com"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
-                  aria-label="Enviar correo a tonytorres1098@gmail.com"
+                  aria-label="Send email to tonytorres1098@gmail.com"
                 >
                   <div
                     className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
@@ -143,7 +143,7 @@ export function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
-                  aria-label="Visitar perfil de GitHub de Codeus1 (se abre en nueva ventana)"
+                  aria-label="Visit Codeus1's GitHub profile (opens in new window)"
                 >
                   <div
                     className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
@@ -159,7 +159,7 @@ export function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
-                  aria-label="Visitar perfil de LinkedIn de Antonio Muñoz Torres (se abre en nueva ventana)"
+                  aria-label="Visit Antonio Muñoz Torres' LinkedIn profile (opens in new window)"
                 >
                   <div
                     className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
@@ -189,13 +189,13 @@ export function Contact() {
                 <input type="hidden" name="ts" value={formData.ts || 0} />
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
-                    Nombre
-                  </label>
+                      Name
+                    </label>
                   <Input
                     className="shadow-none rounded-4xl"
                     id="name"
                     name="name"
-                    placeholder="Tu nombre"
+                    placeholder="Your name"
                     autoComplete="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -223,7 +223,7 @@ export function Contact() {
                     id="email"
                     type="email"
                     name="email"
-                    placeholder="tu@email.com"
+                    placeholder="your@email.com"
                     autoComplete="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -244,12 +244,12 @@ export function Contact() {
 
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">
-                    Mensaje
+                    Message
                   </label>
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Cuéntame sobre tu proyecto..."
+                    placeholder="Tell me about your project..."
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -282,7 +282,7 @@ export function Contact() {
                   className="cursor-pointer w-full gap-2 dark:hover:text-foreground dark:text-foreground disabled:opacity-60"
                 >
                   <Send className="w-4 h-4" />
-                  {status === "submitting" ? "Enviando..." : "Enviar Mensaje"}
+                  {status === "submitting" ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </Card>

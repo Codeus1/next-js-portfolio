@@ -5,23 +5,23 @@ export function About() {
   const skills = [
     {
       icon: Code2,
-      title: "Desarrollo Frontend",
-      description: "React, Next.js, TypeScript, y las últimas tecnologías web",
+      title: "Frontend Development",
+      description: "React, Next.js, TypeScript, and the latest web technologies",
     },
     {
       icon: Palette,
       title: "UI/UX Design",
-      description: "Interfaces intuitivas y experiencias de usuario excepcionales",
+      description: "Intuitive interfaces and exceptional user experiences",
     },
     {
       icon: Zap,
       title: "Performance",
-      description: "Optimización y mejores prácticas para aplicaciones rápidas",
+      description: "Optimization and best practices for fast applications",
     },
     {
       icon: Rocket,
-      title: "Innovación",
-      description: "Siempre explorando nuevas tecnologías y metodologías",
+      title: "Innovation",
+      description: "Always exploring new technologies and methodologies",
     },
   ]
 
@@ -30,13 +30,13 @@ export function About() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto space-y-16">
           <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-              Sobre <span className="text-primary">Mí</span>
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Desarrollador frontend apasionado por crear experiencias web excepcionales que combinan diseño elegante
-              con código robusto
-            </p>
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+                About <span className="text-primary">Me</span>
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+                I'm a frontend developer passionate about building exceptional web experiences that combine elegant design
+                with robust code.
+              </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -58,14 +58,17 @@ export function About() {
 
           <div className="max-w-3xl mx-auto space-y-6 text-center">
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
-              Con más de 5 años de experiencia en desarrollo web, me especializo en crear aplicaciones modernas y
-              escalables. Mi enfoque combina las mejores prácticas de ingeniería con un ojo crítico para el diseño, 
-              lo que asegura que cada proyecto no solo funcione perfectamente, sino que también ofrezca una experiencia de
-              usuario memorable.
+              {/* en ingles */}
+              With over 3 years of experience in web development, I specialize in creating modern and scalable
+              applications. My approach combines best engineering practices with a critical eye for design, ensuring
+              that each project not only functions perfectly but also delivers a memorable user experience.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {["React", "Next.js", "TypeScript", "Tailwind CSS", "Three.js", "Node.js", "Git", "Figma"].map((tech) => (
-                <span key={tech} className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium dark:bg-ring/10">
+                <span
+                  key={tech}
+                  className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium dark:bg-ring/10"
+                >
                   {tech}
                 </span>
               ))}

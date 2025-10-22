@@ -26,14 +26,14 @@ export function Hero() {
       <div className="container mx-auto px-4 z-10 relative">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <div className="space-y-4 animate-fade-in-up">
-            <p className="text-accent text-xl">Hola, soy Antonio Muñoz</p>
+            <p className="text-accent text-xl">Hi, I'm Antonio Muñoz</p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance">
               <span className="bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent animate-gradient">
                 Frontend Developer
               </span>
             </h1>
             <p className="text-xl md:text-2xl max-w-2xl mx-auto text-pretty text-sidebar-ring dark:text-foreground/90 transition-colors">
-              Creando experiencias web excepcionales con código limpio y diseño pixel-perfect
+              Building exceptional web experiences with clean code and pixel-perfect design
             </p>
           </div>
 
@@ -48,8 +48,8 @@ export function Hero() {
                 focus-visible:ring-offset-2 focus-visible:ring-ring focus-visible:ring-offset-background transition-all duration-300"
               asChild
             >
-              <a href="#projects" aria-label="Ver proyectos destacados">
-                Ver Proyectos
+              <a href="#projects" aria-label="View featured projects">
+                View Projects
                 <ArrowDown className="w-4 h-4" />
               </a>
             </Button>
@@ -59,7 +59,7 @@ export function Hero() {
               className="gap-2 rounded-3xl hover:bg-primary hover:text-primary-foreground transition-all duration-300 dark:hover:text-foreground"
               asChild
             >
-              <a href="#contact">Contactar</a>
+              <a href="#contact">Contact</a>
             </Button>
           </div>
 
@@ -67,7 +67,7 @@ export function Hero() {
             className="flex items-center justify-center gap-3 animate-fade-in-up"
             style={{ animationDelay: "0.4s" }}
             role="list"
-            aria-label="Redes sociales"
+            aria-label="Social profiles"
           >
             <Button
               variant="outline"
@@ -79,7 +79,7 @@ export function Hero() {
                 href="https://github.com/Codeus1"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visitar perfil de GitHub"
+                aria-label="Visit GitHub profile"
               >
                 <Github className="w-5 h-5" aria-hidden="true" />
               </a>
@@ -94,7 +94,7 @@ export function Hero() {
                 href="https://www.linkedin.com/in/antonio-munoz-torres/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Visitar perfil de LinkedIn"
+                aria-label="Visit LinkedIn profile"
               >
                 <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
@@ -105,7 +105,7 @@ export function Hero() {
               className="rounded-full border-2 border-muted-foreground/20 transform-gpu transition-transform duration-200 ease-out hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-red-600 hover:bg-red-600 hover:text-white dark:hover:border-red-500 dark:hover:bg-red-500"
               asChild
             >
-              <a href="mailto:tonytorres1098@gmail.com" aria-label="Enviar correo electrónico">
+              <a href="mailto:tonytorres1098@gmail.com" aria-label="Send email">
                 <Mail className="w-5 h-5" aria-hidden="true" />
               </a>
             </Button>

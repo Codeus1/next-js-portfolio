@@ -1,40 +1,35 @@
 import { Card } from "@/components/ui/card"
 import { Briefcase, Calendar } from "lucide-react"
 
+const descriptions = {
+  sek: `I designed and implemented 3D rendering optimization techniques for web applications using drone data, in collaboration with UCJC - Hovering Solutions. I developed interactive visualization prototypes and created and scaled a comprehensive platform using NestJS and a 3D front-end with React Three Fiber to manage digital twin projects, including model review, defect control, annotations, and georeferenced image integration.`,
+  altia: `Developed new functionalities in enterprise applications using React 18 and Vue 3, enhancing code scalability. Optimized global state management and routing, reducing asynchronous request errors and accelerating performance. Implemented data visualization components that facilitated the interpretation of key information and collaborated on continuous user interface and experience improvements, which increased internal client satisfaction.`,
+  thales: `Automated information extraction using SQL queries and stored procedures, reducing data analysis times. Supervised operations on remote machines in AWS, ensuring service continuity. Documented procedures and results in Confluence, improving the traceability of QA processes. Coordinated with development teams to report and resolve issues identified during testing, enhancing overall software quality.`,
+}
+
 export function Experience() {
   const experiences = [
     {
-      title: "Personal Docente Investigador y Desarrollador",
+      // en ingles
+      title: "Teaching Researcher and Developer",
       company: "SEK Education Group",
-      //todo: poner un date.now() para poner presente o algo asi, "presente" ahi a piñon no me gusta
-      period: "2024 - Presente",
-      description:
-        `Designed and implemented 3D rendering optimization techniques for web applications using drone data, in collaboration 
-        with UCJC - Hovering Solutions.
-        Developed interactive visualization prototypes and participated in the creation of a comprehensive platform using 
-        NestJS and a 3D front-end for managing digital twin projects, including model review, defect control, 
-        annotations, and georeferenced image integration.
-        `,
+      period: "2024 - Present",
+      description: descriptions.sek,
       technologies: ["React", "Nest.js", "TypeScript", "Tailwind CSS"],
     },
 
     {
-      title: "Desarrollador Frontend",
+      title: "Frontend Developer",
       company: "ALTIA",
       period: "7/2023 - 6/2024",
-      description: `Developed new functionalities in enterprise applications using React 18 and Vue 3, 
-        enhancing code scalability.
-        Optimized global state management and routing, reducing asynchronous request errors and accelerating performance.
-        Implemented data visualization components that facilitated the interpretation of key information and collaborated on continuous user interface and experience improvements, which increased internal client satisfaction.`,
+      description: descriptions.altia,
       technologies: ["Vue.js", "React", "JavaScript", "TypeScript", "REST APIs"],
     },
     {
-
       title: "QA Engineer",
       company: "THALES",
       period: "6/2022 - 10/2022",
-      description:
-        "Automated information extraction using SQL queries and stored procedures, reducing data analysis times. Supervised operations on remote machines in AWS, ensuring service continuity. Documented procedures and results in Confluence, improving the traceability of QA processes",
+      description: descriptions.thales,
       technologies: ["PL-SQL", "MySQL", "JIRA", "Excel", "AWS"],
     },
   ]
@@ -44,10 +39,12 @@ export function Experience() {
         <div className="max-w-4xl mx-auto space-y-12">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-              <span className="text-primary">Experiencia</span> Profesional
+              {/* en ingles */}
+              <span className="text-primary">Professional</span> Experience
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Mi trayectoria en el desarrollo web y las empresas donde he contribuido
+            {/* en ingles */}
+              My career in web development and the companies where I have contributed
             </p>
           </div>
 

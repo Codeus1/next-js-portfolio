@@ -8,7 +8,7 @@ export function Projects() {
     {
       title: "E-Commerce Platform",
       description:
-        "Plataforma de comercio electrónico completa con carrito de compras, pagos integrados y panel de administración.",
+        "Full-featured e-commerce platform with shopping cart, integrated payments and admin panel.",
       image: "/modern-ecommerce-website.png",
       technologies: ["Next.js", "TypeScript", "Stripe", "Prisma"],
       github: "https://github.com",
@@ -17,7 +17,7 @@ export function Projects() {
     {
       title: "Dashboard Analytics",
       description:
-        "Dashboard interactivo con visualización de datos en tiempo real, gráficos dinámicos y reportes personalizables.",
+        "Interactive dashboard with real-time data visualization, dynamic charts and customizable reports.",
       image: "/analytics-dashboard-dark-theme.png",
       technologies: ["React", "D3.js", "TailwindCSS", "Node.js"],
       github: "https://github.com",
@@ -26,7 +26,7 @@ export function Projects() {
     {
       title: "Social Media App",
       description:
-        "Aplicación social con feed en tiempo real, sistema de mensajería, notificaciones push y perfiles de usuario.",
+        "Social app with real-time feed, messaging system, push notifications and user profiles.",
       image: "/social-media-app-interface.png",
       technologies: ["Next.js", "Socket.io", "MongoDB", "AWS"],
       github: "https://github.com",
@@ -40,10 +40,11 @@ export function Projects() {
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-              Proyectos <span className="text-primary">Destacados</span>
+              {/* en ingles */}
+              Featured <span className="text-primary">Projects</span>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Una selección de mis trabajos más recientes y significativos
+              {/* en ingles */}A selection of my most recent and significant work
             </p>
           </div>
 
@@ -78,9 +79,19 @@ export function Projects() {
                       className="gap-2 flex-1 bg-transparent group transform-gpu transition duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-[#0d1117] hover:bg-[#0d1117] hover:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-black"
                       asChild
                     >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`Abrir código de ${project.title} en GitHub (se abre en nueva pestaña)`} title="Abrir en GitHub">
-                        <Github className="w-4 h-4 transition duration-200 motion-safe:group-hover:-translate-y-0.5" aria-hidden="true" />
-                        Código
+                      {/* en ingles */}
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Open code for ${project.title} on GitHub (opens in new tab)`}
+                        title="Open on GitHub"
+                      >
+                        <Github
+                          className="w-4 h-4 transition duration-200 motion-safe:group-hover:-translate-y-0.5"
+                          aria-hidden="true"
+                        />
+                        Code
                       </a>
                     </Button>
                     <Button
@@ -96,10 +107,13 @@ export function Projects() {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`Abrir demo de ${project.title} (se abre en nueva pestaña)`}
-                        title="Abrir demo"
+                        aria-label={`Open demo for ${project.title} (opens in new tab)`}
+                        title="Open demo"
                       >
-                        <ExternalLink className="w-4 h-4 transition duration-200 motion-safe:group-hover:-translate-y-0.5" aria-hidden="true" />
+                        <ExternalLink
+                          className="w-4 h-4 transition duration-200 motion-safe:group-hover:-translate-y-0.5"
+                          aria-hidden="true"
+                        />
                         Demo
                       </a>
                     </Button>

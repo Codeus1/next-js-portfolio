@@ -34,11 +34,11 @@ export function Navigation() {
   }, [isMobileMenuOpen])
 
   const navItems = [
-    { label: "Inicio", href: "#hero" },
-    { label: "Sobre Mí", href: "#about" },
-    { label: "Experiencia", href: "#experience" },
-    { label: "Proyectos", href: "#projects" },
-    { label: "Contacto", href: "#contact" },
+    { label: "Home", href: "#hero" },
+    { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
   ]
 
   return (
@@ -82,17 +82,17 @@ export function Navigation() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
-            aria-label={isMobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMobileMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </Button>
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
+          {isMobileMenuOpen && (
           <div id="mobile-menu" className="md:hidden mt-4 pb-4 space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">Tema</span>
+              <span className="text-sm text-muted-foreground">Theme</span>
               <ThemeToggle />
             </div>
             {navItems.map((item, idx) => (

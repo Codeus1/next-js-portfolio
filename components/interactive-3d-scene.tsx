@@ -80,7 +80,7 @@ export function Interactive3DScene() {
         <directionalLight position={[10, 10, 5]} intensity={1} />
         <directionalLight position={[-10, -10, -5]} intensity={0.5} />
         {reduceMotion ? (
-          // Render estático cuando reduce motion está activado
+          // Render static when reduce motion is enabled
           <group>
             <AnimatedShape shape={shape} color={color} distort={0} />
           </group>
@@ -97,15 +97,15 @@ export function Interactive3DScene() {
       border-border/50 hidden md:block rounded-4xl"
       >
         <div className="flex items-center justify-between">
-          <p className="text-sm font-medium px-2">Controles 3D</p>
+          <p className="text-sm font-medium px-2">3D Controls</p>
           <Button
             className="hover:text-amber-50 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-accent-foreground"
             variant="ghost"
             size="icon"
             onClick={() => setShowControls(!showControls)}
             aria-pressed={showControls}
-            aria-label={showControls ? "Ocultar controles" : "Mostrar controles"}
-            title={showControls ? "Ocultar controles" : "Mostrar controles"}
+            aria-label={showControls ? "Hide controls" : "Show controls"}
+            title={showControls ? "Hide controls" : "Show controls"}
           >
             <SlidersHorizontal className="w-4 h-4" />
           </Button>
@@ -115,7 +115,7 @@ export function Interactive3DScene() {
           <>
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <label className="text-xs text-muted-foreground">Forma</label>
+                <label className="text-xs text-muted-foreground">Shape</label>
                 <Button variant="outline" size="sm" onClick={cycleShape} className="gap-2 bg-transparent">
                   <Shapes className="w-3 h-3" />
                   {shape}
@@ -134,9 +134,9 @@ export function Interactive3DScene() {
             </div>
 
             <div className="space-y-2">
-              <label id="distorsion-label" className="text-xs text-muted-foreground">Distorsión: {distort.toFixed(2)}</label>
+              <label id="distortion-label" className="text-xs text-muted-foreground">Distortion: {distort.toFixed(2)}</label>
               <Slider
-                aria-labelledby="distorsion-label"
+                aria-labelledby="distortion-label"
                 value={[distort]}
                 onValueChange={(value) => setDistort(value[0])}
                 min={0}
@@ -147,7 +147,7 @@ export function Interactive3DScene() {
             </div>
 
             <p className="text-xs text-muted-foreground pt-2 border-t border-border">
-              Arrastra para rotar • Experimenta con los controles
+              Drag to rotate • Experiment with the controls
             </p>
           </>
         )}

@@ -6,6 +6,15 @@ import Image from "next/image"
 export function Projects() {
   const projects = [
     {
+      title: "Simple Invoice Generator",
+      description:
+        "Create and manage invoices quickly with a clean, responsive UI. Includes invoice details capture and a shareable flow for sending to clients.",
+      image: "/formulario factura ver detalle.png",
+      technologies: ["Next.js", "TypeScript", "TailwindCSS"],
+      github: "https://github.com/Codeus1/facturasimple",
+      demo: "https://generador-facturas-nine.vercel.app/",
+    },
+    {
       title: "YouTube Clone",
       description:
         "A YouTube clone with video playback, user authentication, comments, likes and subscriptions.",

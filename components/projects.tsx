@@ -24,13 +24,13 @@ export function Projects() {
       demo: "https://demo.com",
     },
     {
-      title: "E-Commerce Platform",
+      title: "AI Multi Chatbot",
       description:
-        "Full-featured e-commerce platform with shopping cart, integrated payments and admin panel.",
-      image: "/modern-ecommerce-website.png",
-      technologies: ["Next.js", "TypeScript", "Stripe", "Prisma"],
-      github: "https://github.com",
-      demo: "https://demo.com",
+        "Conversational AI platform that lets you switch between custom personas, route context through knowledge bases, and stream GPT-powered replies in real time.",
+      image: "/chatbot-nextjs.png",
+      technologies: ["Next.js", "TypeScript", "OpenAI", "TailwindCSS"],
+      github: "https://github.com/Codeus1/ai-multichatbot",
+      demo: "https://ai-multichatbot.vercel.app/",
     },
     {
       title: "Dashboard Analytics",

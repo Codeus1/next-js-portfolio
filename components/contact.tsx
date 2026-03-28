@@ -293,7 +293,7 @@ export function Contact() {
       <footer className="mt-24 pt-8 border-t border-border">
         <div className="container mx-auto px-4">
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Frontend Developer Portfolio. Hecho con ❤️ y Next.js
+            © {new Date().getFullYear()} Frontend Developer Portfolio. All rights reserved.
           </p>
         </div>
       </footer>

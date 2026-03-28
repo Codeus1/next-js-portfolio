@@ -1,9 +1,15 @@
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font/sans'
+import { Inter } from 'next/font/google'
 import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 const SITE_URL = 'https://antonio-munoz.vercel.app'
 const SITE_NAME = 'Antonio Muñoz — Frontend Developer'
@@ -67,7 +73,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className={`font-sans ${inter.variable} ${GeistMono.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
           {/* JSON-LD Person schema for SEO */}

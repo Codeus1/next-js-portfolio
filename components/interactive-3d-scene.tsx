@@ -1,7 +1,7 @@
 "use client"
 
 import { Canvas } from "@react-three/fiber"
-import { OrbitControls, Float, MeshDistortMaterial, Sphere, Box, Torus } from "@react-three/drei"
+import { OrbitControls, Float, MeshDistortMaterial, Sphere, Box, Torus, Octahedron, Cylinder, TorusKnot, Ring, Tetrahedron, Icosahedron, Dodecahedron } from "@react-three/drei"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Slider } from "@/components/ui/slider"
@@ -18,8 +18,9 @@ function AnimatedShape({ shape, color, distort }: { shape: string; color: string
           </Sphere>
         )
       case "box":
+        // Añadimos segmentos a la caja para que la distorsión se aplique bien en las caras
         return (
-          <Box args={[1.5, 1.5, 1.5]}>
+          <Box args={[1.5, 1.5, 1.5, 16, 16, 16]}>
             <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
           </Box>
         )
@@ -28,6 +29,64 @@ function AnimatedShape({ shape, color, distort }: { shape: string; color: string
           <Torus args={[1, 0.4, 32, 100]}>
             <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
           </Torus>
+        )
+      case "rhombus":
+        // Octaedro sin detalle adicional simula un diamante/rombo en 3D
+        return (
+          <Octahedron args={[1.2, 0]}>
+            <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
+          </Octahedron>
+        )
+      case "trapezium":
+        // Cilindro de 4 lados escalado asimétricamente para simular trapecio
+        return (
+          <Cylinder args={[0.6, 1.2, 1, 4, 32]}>
+            <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
+          </Cylinder>
+        )
+      case "trapezoid":
+        // Variación del trapecio
+        return (
+          <Cylinder args={[0.3, 1.4, 1.2, 4, 32]} scale={[1.2, 1, 0.8]}>
+            <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
+          </Cylinder>
+        )
+      case "ellipse":
+        // Esfera achatada para parecerse a un óvalo/elipse
+        return (
+          <Sphere args={[1, 64, 64]} scale={[1.5, 0.8, 1]}>
+            <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
+          </Sphere>
+        )
+      case "torus-knot":
+        return (
+          <TorusKnot args={[0.7, 0.25, 100, 16]}>
+            <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
+          </TorusKnot>
+        )
+      case "ring":
+        return (
+          <Ring args={[0.5, 1.2, 64]}>
+            <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
+          </Ring>
+        )
+      case "tetrahedron":
+        return (
+          <Tetrahedron args={[1.4, 0]}>
+            <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
+          </Tetrahedron>
+        )
+      case "icosahedron":
+        return (
+          <Icosahedron args={[1.2, 0]}>
+            <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
+          </Icosahedron>
+        )
+      case "polyhedron":
+        return (
+          <Dodecahedron args={[1.2, 0]}>
+            <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
+          </Dodecahedron>
         )
       default:
         return null
@@ -58,7 +117,10 @@ export function Interactive3DScene() {
     }
   }, [])
 
-  const shapes = ["sphere", "box", "torus"]
+  const shapes = [
+    "sphere", "box", "torus", "rhombus", "trapezium", "trapezoid",
+    "ellipse", "torus-knot", "ring", "tetrahedron", "icosahedron", "polyhedron"
+  ]
   const colors = ["#6366f1", "#ec4899", "#8b5cf6", "#06b6d4", "#10b981"]
 
   const cycleShape = () => {

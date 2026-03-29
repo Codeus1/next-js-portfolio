@@ -1,14 +1,9 @@
-import { NextResponse } from 'next/server'
+import { NextResponse } from "next/server"
 
-const SITE_URL = 'https://antonio-munoz.vercel.app'
+const SITE_URL = "https://antonio-munoz.vercel.app"
 
 export async function GET() {
-  const pages = [
-    '',
-    'about',
-    'projects',
-    'contact',
-  ]
+  const pages = ["", "about", "projects", "contact"]
 
   const urls = pages
     .map((p) => {
@@ -18,7 +13,7 @@ export async function GET() {
     <priority>0.7</priority>
   </url>`
     })
-    .join('\n')
+    .join("\n")
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -27,7 +22,7 @@ ${urls}
 
   return new NextResponse(xml, {
     headers: {
-      'Content-Type': 'application/xml',
+      "Content-Type": "application/xml",
     },
   })
 }

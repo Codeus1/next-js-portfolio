@@ -1,8 +1,9 @@
 "use client"
 
-import { Interactive3DScene } from "@/components/interactive-3d-scene"
 import { Button } from "@/components/ui/button"
+import { VoronoiPattern } from "@/components/voronoi-pattern"
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import { Interactive3DScene } from "./interactive-3d-scene"
 
 export function Hero() {
   return (
@@ -17,8 +18,24 @@ export function Hero() {
           style={{ animationDelay: "1s" }}
         />
       </div>
-      {/* 3D Background */}
-      <div className="absolute inset-0 z-0">
+
+      {/* Voronoi Pattern */}
+      <div className="absolute inset-0 z-[1] pointer-events-none">
+        <VoronoiPattern
+          count={24}
+          speed={0.08}
+          roundness={0.6}
+          gap={3}
+          lineWidth={1}
+          lineColor="oklch(0.45 0.15 264 / 0.12)"
+          colorA="oklch(0.45 0.15 264 / 0.08)"
+          colorB="oklch(0.65 0.2 310 / 0.08)"
+          seed={42}
+        />
+      </div>
+
+      {/* 3D Scene */}
+      <div className="absolute inset-0 z-[2]">
         <Interactive3DScene />
       </div>
 

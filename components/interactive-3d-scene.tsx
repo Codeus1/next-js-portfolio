@@ -99,7 +99,7 @@ export function Interactive3DScene() {
         <div className="flex items-center justify-between">
           <p className="text-sm font-medium px-2">3D Controls</p>
           <Button
-            className="hover:text-amber-50 dark:hover:border-accent dark:hover:bg-accent dark:hover:text-accent-foreground"
+            className="hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors"
             variant="ghost"
             size="icon"
             onClick={() => setShowControls(!showControls)}
@@ -116,7 +116,7 @@ export function Interactive3DScene() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <label className="text-xs text-muted-foreground">Shape</label>
-                <Button variant="outline" size="sm" onClick={cycleShape} className="gap-2 bg-transparent">
+                <Button variant="outline" size="sm" onClick={cycleShape} className="cursor-pointer gap-2 bg-transparent hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-colors">
                   <Shapes className="w-3 h-3" />
                   {shape}
                 </Button>
@@ -126,9 +126,9 @@ export function Interactive3DScene() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <label className="text-xs text-muted-foreground">Color</label>
-                <Button variant="outline" size="sm" onClick={cycleColor} className="gap-2 bg-transparent">
+                <Button variant="outline" size="sm" onClick={cycleColor} className="cursor-pointer gap-2 bg-transparent hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-colors">
                   <Palette className="w-3 h-3" />
-                  <div className="w-4 h-4 rounded-full" style={{ backgroundColor: color }} />
+                  <div className="w-4 h-4 rounded-full border border-white/20" style={{ backgroundColor: color }} />
                 </Button>
               </div>
             </div>

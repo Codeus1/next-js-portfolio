@@ -1,12 +1,25 @@
 "use client"
 
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls, Float, MeshDistortMaterial, Sphere, Box, Torus, Octahedron, Cylinder, TorusKnot, Ring, Tetrahedron, Icosahedron, Dodecahedron } from "@react-three/drei"
-import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Slider } from "@/components/ui/slider"
 import { Card } from "@/components/ui/card"
-import { Palette, SlidersHorizontal, Shapes } from "lucide-react"
+import { Slider } from "@/components/ui/slider"
+import {
+  Box,
+  Cylinder,
+  Dodecahedron,
+  Float,
+  Icosahedron,
+  MeshDistortMaterial,
+  Octahedron,
+  OrbitControls,
+  Sphere,
+  Tetrahedron,
+  Torus,
+  TorusKnot,
+} from "@react-three/drei"
+import { Canvas } from "@react-three/fiber"
+import { Palette, Shapes, SlidersHorizontal } from "lucide-react"
+import { useEffect, useState } from "react"
 
 function AnimatedShape({ shape, color, distort }: { shape: string; color: string; distort: number }) {
   const ShapeComponent = () => {
@@ -64,12 +77,6 @@ function AnimatedShape({ shape, color, distort }: { shape: string; color: string
             <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
           </TorusKnot>
         )
-      case "ring":
-        return (
-          <Ring args={[0.5, 1.2, 64]}>
-            <MeshDistortMaterial color={color} speed={2} distort={distort} radius={1} />
-          </Ring>
-        )
       case "tetrahedron":
         return (
           <Tetrahedron args={[1.4, 0]}>
@@ -118,8 +125,17 @@ export function Interactive3DScene() {
   }, [])
 
   const shapes = [
-    "sphere", "box", "torus", "rhombus", "trapezium", "trapezoid",
-    "ellipse", "torus-knot", "ring", "tetrahedron", "icosahedron", "polyhedron"
+    "sphere",
+    "box",
+    "torus",
+    "rhombus",
+    "trapezium",
+    "trapezoid",
+    "ellipse",
+    "torus-knot",
+    "tetrahedron",
+    "icosahedron",
+    "polyhedron",
   ]
   const colors = ["#6366f1", "#ec4899", "#8b5cf6", "#06b6d4", "#10b981"]
 
@@ -155,7 +171,8 @@ export function Interactive3DScene() {
       </Canvas>
 
       {/* Interactive Controls */}
-      <Card className="absolute bottom-8 left-8 p-4 space-y-4 bg-card/80 backdrop-blur-lg 
+      <Card
+        className="absolute bottom-8 left-8 p-4 space-y-4 bg-card/80 backdrop-blur-lg 
       border-border/50 hidden md:block rounded-4xl"
       >
         <div className="flex items-center justify-between">
@@ -178,7 +195,12 @@ export function Interactive3DScene() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <label className="text-xs text-muted-foreground">Shape</label>
-                <Button variant="outline" size="sm" onClick={cycleShape} className="cursor-pointer gap-2 bg-transparent hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-colors">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={cycleShape}
+                  className="cursor-pointer gap-2 bg-transparent hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-colors"
+                >
                   <Shapes className="w-3 h-3" />
                   {shape}
                 </Button>
@@ -188,7 +210,12 @@ export function Interactive3DScene() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <label className="text-xs text-muted-foreground">Color</label>
-                <Button variant="outline" size="sm" onClick={cycleColor} className="cursor-pointer gap-2 bg-transparent hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-colors">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={cycleColor}
+                  className="cursor-pointer gap-2 bg-transparent hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:text-white dark:hover:border-primary transition-colors"
+                >
                   <Palette className="w-3 h-3" />
                   <div className="w-4 h-4 rounded-full border border-white/20" style={{ backgroundColor: color }} />
                 </Button>
@@ -196,7 +223,9 @@ export function Interactive3DScene() {
             </div>
 
             <div className="space-y-2">
-              <label id="distortion-label" className="text-xs text-muted-foreground">Distortion: {distort.toFixed(2)}</label>
+              <label id="distortion-label" className="text-xs text-muted-foreground">
+                Distortion: {distort.toFixed(2)}
+              </label>
               <Slider
                 aria-labelledby="distortion-label"
                 value={[distort]}

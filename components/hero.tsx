@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { VoronoiPattern } from "@/components/voronoi-pattern"
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
 import { Interactive3DScene } from "./interactive-3d-scene"
+import { cn } from "@/lib/utils"
 
 export function Hero() {
   return (
@@ -60,9 +61,14 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="gap-2 tracking-normal border-none rounded-3xl bg-gradient-to-r from-primary to-accent text-white 
-                hover:from-primary/85 hover:to-accent/85 shadow-md shadow-primary/20 hover:shadow-primary/40 focus-visible:ring-2 
-                focus-visible:ring-offset-2 focus-visible:ring-ring focus-visible:ring-offset-background transition-all duration-300"
+              className={cn(
+                "gap-2 tracking-normal border-none rounded-3xl text-white",
+                "bg-gradient-to-r from-primary to-accent",
+                "hover:from-primary/85 hover:to-accent/85",
+                "shadow-md shadow-primary/20 hover:shadow-primary/40",
+                "focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-ring focus-visible:ring-offset-background",
+                "transition-all duration-300"
+              )}
               asChild
             >
               <a href="#projects" aria-label="View featured projects">
@@ -73,7 +79,11 @@ export function Hero() {
             <Button
               size="lg"
               variant="secondary"
-              className="gap-2 rounded-3xl hover:bg-primary hover:text-primary-foreground transition-all duration-300 dark:hover:text-foreground"
+              className={cn(
+                "gap-2 rounded-3xl transition-all duration-300",
+                "hover:bg-primary hover:text-primary-foreground",
+                "dark:hover:text-foreground"
+              )}
               asChild
             >
               <a href="#contact">Contact</a>
@@ -89,7 +99,13 @@ export function Hero() {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full border-2 border-muted-foreground/20 transform-gpu transition-transform duration-200 ease-out hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-[#0d1117] hover:bg-[#0d1117] hover:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-black"
+              className={cn(
+                "rounded-full border-2 border-muted-foreground/20",
+                "transform-gpu transition-transform duration-200 ease-out hover:scale-110",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                "hover:border-[#0d1117] hover:bg-[#0d1117] hover:text-white",
+                "dark:hover:border-white dark:hover:bg-white dark:hover:text-black"
+              )}
               asChild
             >
               <a
@@ -104,7 +120,13 @@ export function Hero() {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full border-2 border-muted-foreground/20 transform-gpu transition-transform duration-200 ease-out hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white dark:hover:border-[#0A66C2] dark:hover:bg-[#0A66C2] dark:hover:text-white"
+              className={cn(
+                "rounded-full border-2 border-muted-foreground/20",
+                "transform-gpu transition-transform duration-200 ease-out hover:scale-110",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                "hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white",
+                "dark:hover:border-[#0A66C2] dark:hover:bg-[#0A66C2] dark:hover:text-white"
+              )}
               asChild
             >
               <a
@@ -119,7 +141,13 @@ export function Hero() {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full border-2 border-muted-foreground/20 transform-gpu transition-transform duration-200 ease-out hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-red-600 hover:bg-red-600 hover:text-white dark:hover:border-red-500 dark:hover:bg-red-500"
+              className={cn(
+                "rounded-full border-2 border-muted-foreground/20",
+                "transform-gpu transition-transform duration-200 ease-out hover:scale-110",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                "hover:border-red-600 hover:bg-red-600 hover:text-white",
+                "dark:hover:border-red-500 dark:hover:bg-red-500"
+              )}
               asChild
             >
               <a href="mailto:tonytorres1098@gmail.com" aria-label="Send email">

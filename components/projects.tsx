@@ -79,7 +79,13 @@ export function Projects() {
             {projects.map((project, index) => (
               <div key={index} className="relative group">
                 {/* Glow Effect */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-xl blur opacity-0 group-hover:opacity-60 transition-opacity duration-[1500ms] ease-in-out" />
+                <div
+                  className={cn(
+                    "absolute -inset-0.5 rounded-xl blur opacity-0",
+                    "bg-gradient-to-r from-primary to-purple-600",
+                    "group-hover:opacity-60 transition-opacity duration-[1500ms] ease-in-out"
+                  )}
+                />
 
                 <Card className="relative h-full overflow-hidden bg-card border-border flex flex-col">
                   <div className="relative h-48 overflow-hidden bg-muted shrink-0">

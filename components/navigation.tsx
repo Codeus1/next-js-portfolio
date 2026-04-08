@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { cn } from "@/lib/utils"
 import { Menu, X } from "lucide-react"
 
 export function Navigation() {
@@ -45,9 +46,10 @@ export function Navigation() {
     <nav
       role="navigation"
       aria-label="Navegación principal"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
-      }`}
+      )}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
@@ -64,9 +66,11 @@ export function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors 
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm 
-                dark:text-foreground/80 hover:dark:text-foreground"
+                className={cn(
+                  "text-sm font-medium text-muted-foreground transition-colors",
+                  "hover:text-foreground dark:text-foreground/80 hover:dark:text-foreground",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm"
+                )}
               >
                 {item.label}
               </a>
@@ -89,7 +93,7 @@ export function Navigation() {
         </div>
 
         {/* Mobile Menu */}
-          {isMobileMenuOpen && (
+        {isMobileMenuOpen && (
           <div id="mobile-menu" className="md:hidden mt-4 pb-4 space-y-4">
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted-foreground">Theme</span>

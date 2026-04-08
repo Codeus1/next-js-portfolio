@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ExternalLink, Github } from "lucide-react"
 import Image from "next/image"
+import { cn } from "@/lib/utils"
 
 export function Projects() {
   const projects = [
@@ -121,7 +122,13 @@ export function Projects() {
                         <Button
                           variant="outline"
                           size="sm"
-                          className="gap-2 flex-1 bg-transparent group transform-gpu transition duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-[#0d1117] hover:bg-[#0d1117] hover:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-black"
+                          className={cn(
+                            "gap-2 flex-1 bg-transparent group transform-gpu",
+                            "transition duration-200 ease-out",
+                            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                            "hover:border-[#0d1117] hover:bg-[#0d1117] hover:text-white",
+                            "dark:hover:border-white dark:hover:bg-white dark:hover:text-black"
+                          )}
                           asChild
                         >
                           {/* en ingles */}
@@ -143,10 +150,13 @@ export function Projects() {
                       <Button
                         variant="outline"
                         size="sm"
-                        className="gap-2 flex-1 bg-transparent group transform-gpu transition duration-200 ease-out 
-                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring hover:border-accent 
-                      hover:bg-accent hover:text-accent-foreground 
-                      dark:hover:border-accent dark:hover:bg-accent dark:hover:text-accent-foreground"
+                        className={cn(
+                          "gap-2 flex-1 bg-transparent group transform-gpu",
+                          "transition duration-200 ease-out",
+                          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+                          "hover:border-accent hover:bg-accent hover:text-accent-foreground",
+                          "dark:hover:border-accent dark:hover:bg-accent dark:hover:text-accent-foreground"
+                        )}
                         asChild
                       >
                         <a
